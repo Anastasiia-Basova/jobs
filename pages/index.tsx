@@ -1,9 +1,17 @@
+import Link from 'next/link'
+
 export default function Home({jobs}: any) {
     return (
         <ul>
             {
                 jobs.map((job: any, index: any) => {
-                    return <li>{job.title}</li>
+                    return (
+                        <li>
+                            <Link href={`/jobs/${job.id}`}>
+                                {job.title}
+                            </Link>
+                        </li>
+                    )
                 })
             }
         </ul>
